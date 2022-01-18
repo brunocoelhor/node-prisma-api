@@ -1,17 +1,15 @@
 import { Request, Response } from 'express';
-import { UpdateDeliverymanUseCase } from './UpdateDeliverymanUseCase';
+import { UpdateEndDateUseCase } from './UpdaetEndDateUseCase';
 
-
-
-export class UpdateDeliverymanController {
+export class UpdateEndDateController {
   async handle(request: Request, response: Response) {
 
     const { id_deliveryman } = request;
     const { id: id_delivery } = request.params;
     
-    const updateDeliverymanUseCase = new UpdateDeliverymanUseCase();
+    const updateEndDateUseCase = new UpdateEndDateUseCase();
 
-    const delivery = await updateDeliverymanUseCase.execute({
+    const delivery = await updateEndDateUseCase.execute({
       id_deliveryman,
       id_delivery
     });
